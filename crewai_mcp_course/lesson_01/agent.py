@@ -11,10 +11,13 @@ Run: python agent.py
 
 from crewai import Agent, Crew, Process, Task
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
 
-# 1. Define the agent
+#1. Define the agent
 researcher = Agent(
     role="AI Researcher",
     goal="Research and summarize the latest developments in AI agents",
